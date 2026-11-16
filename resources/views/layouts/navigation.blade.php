@@ -15,9 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">
-                        {{ __('Siswa') }}
-                    </x-nav-link>
+                    @unless (Auth::user()->isStudent())
+                        <x-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">
+                            {{ __('Siswa') }}
+                        </x-nav-link>
+                    @endunless
                 </div>
             </div>
 
@@ -73,9 +75,11 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">
-               {{ __('Siswa') }}
-            </x-responsive-nav-link>
+            @unless (Auth::user()->isStudent())
+                <x-responsive-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">
+                    {{ __('Siswa') }}
+                </x-responsive-nav-link>
+            @endunless
         </div>
 
         <!-- Responsive Settings Options -->
