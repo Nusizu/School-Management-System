@@ -21,5 +21,10 @@ class DatabaseSeeder extends Seeder
                 $user + ['password' => 'password']
             );
         }
+
+        $this->call([
+            SchoolClassSeeder::class,
+            StudentSeeder::class,
+        ]);
     }
 }
