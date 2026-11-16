@@ -1,0 +1,7 @@
+/* Custom CSS di luar Tailwind. Dipakai juga untuk sidebar di Stage 2. */
+.alert-dismissible {
+    transition: opacity 0.4s ease;
+}
+.alert-dismissible.is-hidden {
+    opacity: 0;
+}
