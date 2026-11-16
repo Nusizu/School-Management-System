@@ -1,1 +1,0 @@
-Halo, {{ Auth::user()->name }}! Anda login sebagai <strong>{{ Auth::user()->role }}</strong>.
