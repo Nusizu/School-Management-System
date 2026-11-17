@@ -101,6 +101,7 @@
             </div>
         </div>
 
+        <x-ui-helpers />
         <script src="{{ asset('js/main.js') }}"></script>
     </body>
 </html>

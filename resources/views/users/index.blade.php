@@ -65,7 +65,7 @@
                                             <div class="flex items-center gap-3">
                                                 <a href="{{ route('users.edit', $user) }}" class="text-indigo-600 hover:underline">Edit</a>
                                                 <form method="POST" action="{{ route('users.destroy', $user) }}"
-                                                      onsubmit="return confirm(@js('Hapus pengguna '.$user->name.'?'))">
+                                                      data-confirm="{{ 'Hapus pengguna '.$user->name.'?' }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="text-red-600 hover:underline">Hapus</button>

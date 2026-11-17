@@ -63,7 +63,7 @@
                                             <div class="flex items-center gap-3">
                                                 <a href="{{ route('teachers.edit', $teacher) }}" class="text-indigo-600 hover:underline">Edit</a>
                                                 <form method="POST" action="{{ route('teachers.destroy', $teacher) }}"
-                                                      onsubmit="return confirm(@js('Hapus guru '.$teacher->name.'?'))">
+                                                      data-confirm="{{ 'Hapus guru '.$teacher->name.'?' }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="text-red-600 hover:underline">Hapus</button>

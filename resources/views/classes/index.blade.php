@@ -61,7 +61,7 @@
                                             <div class="flex items-center gap-3">
                                                 <a href="{{ route('classes.edit', $class) }}" class="text-indigo-600 hover:underline">Edit</a>
                                                 <form method="POST" action="{{ route('classes.destroy', $class) }}"
-                                                      onsubmit="return confirm(@js('Hapus kelas '.$class->name.'?'))">
+                                                      data-confirm="{{ 'Hapus kelas '.$class->name.'?' }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="text-red-600 hover:underline">Hapus</button>
