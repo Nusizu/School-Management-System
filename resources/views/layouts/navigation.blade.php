@@ -16,10 +16,14 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @unless (Auth::user()->isStudent())
-                        <x-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">
-                            {{ __('Siswa') }}
-                        </x-nav-link>
+                        <x-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">{{ __('Siswa') }}</x-nav-link>
+                        <x-nav-link :href="route('teachers.index')" :active="request()->routeIs('teachers.*')">{{ __('Guru') }}</x-nav-link>
+                        <x-nav-link :href="route('classes.index')" :active="request()->routeIs('classes.*')">{{ __('Kelas') }}</x-nav-link>
+                        <x-nav-link :href="route('subjects.index')" :active="request()->routeIs('subjects.*')">{{ __('Mapel') }}</x-nav-link>
                     @endunless
+                    @if (Auth::user()->isAdmin())
+                        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">{{ __('Pengguna') }}</x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -76,10 +80,14 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             @unless (Auth::user()->isStudent())
-                <x-responsive-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">
-                    {{ __('Siswa') }}
-                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('students.index')" :active="request()->routeIs('students.*')">{{ __('Siswa') }}</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('teachers.index')" :active="request()->routeIs('teachers.*')">{{ __('Guru') }}</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('classes.index')" :active="request()->routeIs('classes.*')">{{ __('Kelas') }}</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('subjects.index')" :active="request()->routeIs('subjects.*')">{{ __('Mapel') }}</x-responsive-nav-link>
             @endunless
+            @if (Auth::user()->isAdmin())
+                <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">{{ __('Pengguna') }}</x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->
