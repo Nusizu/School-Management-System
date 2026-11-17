@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Concerns\HasSlug;
 
 class Student extends Model
 {
+    use HasSlug;
+
     protected $table = 'tbl_students';
 
     protected $fillable = [
