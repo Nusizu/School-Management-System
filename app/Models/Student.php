@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Concerns\HasSlug;
+use App\Support\Format;
 
 class Student extends Model
 {
@@ -47,6 +48,6 @@ class Student extends Model
 
     public function getBirthDateFormattedAttribute(): string
     {
-        return $this->birth_date ? $this->birth_date->translatedFormat('j M Y') : '-';
+        return Format::date($this->birth_date);
     }
 }

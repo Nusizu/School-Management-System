@@ -89,6 +89,7 @@
                                 {{ $header }}
                             @endisset
                         </div>
+                        <p class="hidden text-sm text-gray-500 sm:block">{{ \App\Support\Format::longDate() }}</p>
                     </div>
                 </header>
                 

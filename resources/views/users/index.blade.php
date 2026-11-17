@@ -40,11 +40,12 @@
                     <table class="min-w-full divide-y divide-gray-200 text-sm">
                         <thead class="bg-gray-50 text-left text-xs font-semibold uppercase text-gray-500">
                             <tr>
-                                <th class="px-4 py-3">No</th>
+                                <th class="px-4 py-3 text-right">No</th>
                                 <th class="px-4 py-3">Nama</th>
                                 <th class="px-4 py-3">Email</th>
                                 <th class="px-4 py-3">Role</th>
                                 <th class="px-4 py-3">Data Terkait</th>
+                                <th class="px-4 py-3">Terdaftar</th>
                                 @if ($isAdmin)
                                     <th class="px-4 py-3">Aksi</th>
                                 @endif
@@ -53,11 +54,12 @@
                         <tbody class="divide-y divide-gray-100">
                             @forelse ($users as $user)
                                 <tr>
-                                    <td class="px-4 py-3">{{ $users->firstItem() + $loop->index }}</td>
+                                    <td class="px-4 py-3 text-right">{{ number_format($users->firstItem() + $loop->index, 0, ',', '.') }}</td>
                                     <td class="px-4 py-3 font-medium text-gray-900">{{ $user->name }}</td>
                                     <td class="px-4 py-3 text-gray-600">{{ $user->email }}</td>
                                     <td class="px-4 py-3"><span class="px-2 py-1 text-xs rounded-full {{ $user->role === 'admin' ? 'bg-purple-100 text-purple-700' : ($user->role === 'teacher' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700') }}">{{ $user->role_label }}</span></td>
                                     <td class="px-4 py-3 text-gray-600">{{ $user->student?->name ?? $user->teacher?->name ?? '-' }}</td>
+                                    <td class="px-4 py-3 text-gray-600">{{ \App\Support\Format::date($user->created_at) }}</td>
                                     @if ($isAdmin)
                                         <td class="px-4 py-3">
                                             <div class="flex items-center gap-3">
@@ -74,7 +76,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="{{ $isAdmin ? 6 : 6 }}" class="px-4 py-6 text-center text-gray-500">Belum ada data pengguna.</td>
+                                    <td colspan="{{ $isAdmin ? 7 : 7 }}" class="px-4 py-6 text-center text-gray-500">Belum ada data pengguna.</td>
                                 </tr>
                             @endforelse
                         </tbody>

@@ -40,7 +40,7 @@
                     <table class="min-w-full divide-y divide-gray-200 text-sm">
                         <thead class="bg-gray-50 text-left text-xs font-semibold uppercase text-gray-500">
                             <tr>
-                                <th class="px-4 py-3">No</th>
+                                <th class="px-4 py-3 text-right">No</th>
                                 <th class="px-4 py-3">Nama Kelas</th>
                                 <th class="px-4 py-3">Keterangan</th>
                                 <th class="px-4 py-3 text-right">Jumlah Siswa</th>
@@ -52,7 +52,7 @@
                         <tbody class="divide-y divide-gray-100">
                             @forelse ($classes as $class)
                                 <tr>
-                                    <td class="px-4 py-3">{{ $classes->firstItem() + $loop->index }}</td>
+                                    <td class="px-4 py-3 text-right">{{ number_format($classes->firstItem() + $loop->index, 0, ',', '.') }}</td>
                                     <td class="px-4 py-3 font-medium text-gray-900">{{ $class->name }}</td>
                                     <td class="px-4 py-3 text-gray-600">{{ $class->description ?: '-' }}</td>
                                     <td class="px-4 py-3 text-right">{{ number_format($class->students_count, 0, ',', '.') }}</td>

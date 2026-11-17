@@ -38,7 +38,7 @@
                     <table class="min-w-full divide-y divide-gray-200 text-sm">
                         <thead class="bg-gray-50 text-left text-xs font-semibold uppercase text-gray-500">
                             <tr>
-                                <th class="px-4 py-3">No</th>
+                                <th class="px-4 py-3 text-right">No</th>
                                 <th class="px-4 py-3">Foto</th>
                                 <th class="px-4 py-3">Kode</th>
                                 <th class="px-4 py-3">Nama</th>
@@ -53,7 +53,7 @@
                         <tbody class="divide-y divide-gray-100">
                             @forelse ($students as $student)
                                 <tr>
-                                    <td class="px-4 py-3">{{ $students->firstItem() + $loop->index }}</td>
+                                    <td class="px-4 py-3 text-right">{{ number_format($students->firstItem() + $loop->index, 0, ',', '.') }}</td>
                                     <td class="px-4 py-3">
                                         @if ($student->img_url)
                                             <img src="{{ asset($student->img_url) }}" alt="Foto {{ $student->name }}"
