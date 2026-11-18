@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="id">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'School Management System') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f2937'/%3E%3Ctext x='16' y='21.5' font-size='13' font-family='Arial' font-weight='bold' text-anchor='middle' fill='white'%3ESMS%3C/text%3E%3C/svg%3E">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -89,10 +86,11 @@
                                 {{ $header }}
                             @endisset
                         </div>
+
                         <p class="hidden text-sm text-gray-500 sm:block">{{ \App\Support\Format::longDate() }}</p>
                     </div>
                 </header>
-                
+
                 <x-breadcrumbs />
 
                 <main>
