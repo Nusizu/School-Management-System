@@ -63,7 +63,7 @@ class SubjectController extends Controller
 
         if ($subject->teachers()->where('archived', 0)->exists()) {
             return redirect()->route('subjects.index')
-                ->with('error', 'Mata pelajaran tidak dapat dihapus karena masih diampu guru aktif.');
+                ->with('error', 'Mata pelajaran tidak dapat dihapus karena masih diampu guru.');
         }
 
         $subject->update(['archived' => 1]); // soft delete

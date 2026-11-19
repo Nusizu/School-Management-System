@@ -58,7 +58,7 @@ class ClassController extends Controller
 
         if ($class->students()->where('archived', 0)->exists()) {
             return redirect()->route('classes.index')
-                ->with('error', 'Kelas tidak dapat dihapus karena masih memiliki siswa aktif.');
+                ->with('error', 'Kelas tidak dapat dihapus karena masih memiliki siswa.');
         }
 
         $class->update(['archived' => 1]); // soft delete

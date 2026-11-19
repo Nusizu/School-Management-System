@@ -44,7 +44,7 @@ class SubjectRequest extends FormRequest
         return [
             'required' => ':attribute wajib diisi.',
             'max' => ':attribute maksimal :max karakter.',
-            'code.unique' => 'Kode sudah dipakai mata pelajaran lain.',
+            'code.unique' => 'Kode sudah dipakai mata pelajaran lain (termasuk yang sudah dihapus).',
         ];
     }
 }

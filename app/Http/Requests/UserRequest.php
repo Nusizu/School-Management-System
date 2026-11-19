@@ -51,7 +51,7 @@ class UserRequest extends FormRequest
             'required' => ':attribute wajib diisi.',
             'max' => ':attribute maksimal :max karakter.',
             'email.email' => 'Format email tidak valid.',
-            'email.unique' => 'Email sudah terdaftar.',
+            'email.unique' => 'Email sudah terdaftar (termasuk akun yang sudah dihapus).',
             'role.in' => 'Role tidak valid.',
             'password.min' => 'Password minimal :min karakter.',
             'password.confirmed' => 'Konfirmasi password tidak cocok.',

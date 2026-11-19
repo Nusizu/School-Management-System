@@ -90,7 +90,7 @@ class StudentController extends Controller
     {
         abort_if($student->archived, 404);
 
-        $student->update(['archived' => 1]); // soft delete
+        $student->update(['archived' => 1, 'user_id' => null]);
 
         return redirect()->route('students.index')->with('success', 'Data siswa berhasil dihapus.');
     }
