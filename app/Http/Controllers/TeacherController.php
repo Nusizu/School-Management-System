@@ -71,7 +71,7 @@ class TeacherController extends Controller
     {
         abort_if($teacher->archived, 404);
 
-        $teacher->update(['archived' => 1, 'user_id' => null]);
+        $teacher->update(['archived' => 1, 'user_id' => null]); // soft delete + lepas akun login
 
         return redirect()->route('teachers.index')->with('success', 'Data guru berhasil dihapus.');
     }
