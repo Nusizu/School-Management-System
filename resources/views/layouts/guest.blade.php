@@ -15,7 +15,7 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="flex min-h-screen flex-col items-center justify-center bg-gray-100 px-4 py-8">
             <a href="{{ url('/') }}" class="text-center">
-                <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-gray-800 text-xl font-bold text-white">SMS</span>
+                <img src="{{ asset('img/logo-school.svg') }}" alt="Logo {{ config('app.name') }}" class="mx-auto h-14 w-14">
                 <span class="mt-3 block text-sm font-medium text-gray-600">{{ config('app.name') }}</span>
             </a>
 
